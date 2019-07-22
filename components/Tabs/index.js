@@ -13,9 +13,9 @@ const topics = document.querySelector('.topics');
 axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then(data => {
         // console.log(data);
-        const captureTopics = data.data.topics;
-        // console.log(captureTopics);
-        captureTopics.forEach(item => topics.appendChild(createTab(item)));
+        const topicsData = data.data.topics;
+        // console.log(topicsData);
+        topicsData.forEach(item => topics.appendChild(createTab(item)));
     })
     .catch(error => {
         console.log("Something is broken", error);
